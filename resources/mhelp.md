@@ -1,0 +1,15 @@
+________
+*An experimental in-development multi-function bot for Discord for file storage and text-based games with a matrix theme.*
+***Details***
+```ini
+Written in TypeScript/JavaScript using the dblapi and discord.js api. The plan for this bot is at some point
+to have a text-based virtual world where people on Discord servers can interact, use/exchange in-game items,
+fight, and other stuff. Alongside the RPG world, the bot could also act as a multi-purpose utility bot
+for music and server administration/management.
+```
+***Commands***
+```fix
+!mhelp			Displays available commands
+```
+________
+Cheers and have a great day. :beers:

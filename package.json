@@ -1,0 +1,35 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Discord bot.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Test.\"",
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "start": "node dist/index.js",
+    "start-watch": "nodemon dist/index.js",
+    "watch": "concurrently \"npm run build-watch\" \"npm run start-watch\"",
+    "all": "npm run build; npm run start"
+  },
+  "author": "Christian Wiggins",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "@types/highlight.js": "^9.12.3",
+    "@types/node": "^13.9.5",
+    "@types/ws": "^7.2.3",
+    "concurrently": "^5.1.0",
+    "dblapi.js": "^2.4.0",
+    "discord.js": "^12.1.1",
+    "highlight.js": "^9.18.1",
+    "node": "^13.12.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.8.3",
+    "ws": "^7.2.3"
+  }
+}
