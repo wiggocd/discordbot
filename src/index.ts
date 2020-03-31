@@ -1,50 +1,28 @@
+/*
+*   index.ts
+*   Program Entry
+*/
+
 import Discord = require("discord.js");
 import fs = require("fs");
 import Highlight = require("highlight.js");
-const client = new Discord.Client();
+
+import global = require("./global");
+import resources = require("./resources");
+import connect = require("./connect");
+import msghandler = require("./msghandler");
 
 console.log("index.ts/index.js: Hello, world!");
-
-var client_token = "";
-var mhelp = "";
-
-function login(token: string) {
-    return client.login(token); // Keep safe!
-}
-
-function readresources() {
-    fs.readFile("resources/client_token", (err, data) => {
-        if (err) throw err;
-        client_token = data.toString();
-    });
-    fs.readFile("resources/mhelp.md", (err, data) => {
-        if (err) throw err;
-        mhelp = data.toString();
-    });
-    return 1;
-}
+global.client = new Discord.Client();
+connect.connectWithResources();
 
 
-var res = readresources();
-setTimeout(() => {
-    if (res == 1) {
-        login(client_token).catch(function(err) {
-            throw err;
-        });
-    } else {
-        throw console.log("Failed to load resources.");
-    }
-}, 200);
-
-
-client.once('ready', () => {
+global.client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('message', message => {
+global.client.on('message', message => {
     // console.log(message.content);
-    switch (message.content) {
-        case "!mhelp":
-            message.channel.send(mhelp);
-    }
+    if (!message.content.startsWith(global.prefix)) return;
+    msghandler.onmsg(message);
 });
