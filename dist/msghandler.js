@@ -11,7 +11,7 @@ function onmsg(message) {
     console.log(message.author.username, cmd, args);
     switch (cmd) {
         case "help":
-            message.channel.send(global.mhelp);
+            message.channel.send(global.res_strings["mhelp"]);
     }
 }
 exports.onmsg = onmsg;

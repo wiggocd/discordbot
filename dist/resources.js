@@ -6,15 +6,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const global = require("./global");
 function readresources() {
+    const dir_path = "resources/strings/";
+    const dir = fs.opendirSync(dir_path);
+    let dirent;
+    while ((dirent = dir.readSync()) !== null) {
+        let file = fs.readFileSync(dir_path + dirent.name);
+        global.res_strings[dirent.name] = file.toString();
+    }
+    dir.closeSync();
+    // console.log("Resource Strings:", global.res_strings);
     fs.readFile("resources/client_token", (err, data) => {
         if (err)
             throw err;
         global.client_token = data.toString();
-    });
-    fs.readFile("resources/mhelp.md", (err, data) => {
-        if (err)
-            throw err;
-        global.mhelp = data.toString();
     });
     return 1;
 }

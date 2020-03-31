@@ -12,6 +12,7 @@ export function login(token: string) {
 }
 
 export function connectWithResources() {
+
     var res = resources.readresources();
     setTimeout(() => {
         if (res == 1) {
@@ -22,4 +23,5 @@ export function connectWithResources() {
             throw console.log("Failed to load resources.");
         }
     }, 200);
+    
 }
