@@ -4,6 +4,7 @@
 
 import Discord = require("discord.js");
 import global = require("./global");
+import "./cmdhandler";
 
 export function onmsg(message: Discord.Message) {
 
@@ -12,9 +13,10 @@ export function onmsg(message: Discord.Message) {
     const args = msgstring.slice(cmd.length+2).split(' ');
     console.log(message.author.username, cmd, args);
     
-    switch (cmd) {
-        case "help":
-            message.channel.send(global.res_strings["mhelp"]);
+    if (global.cmdhandlers[cmd] != undefined && typeof Function) {
+        console.log(global.cmdhandlers[cmd]);
+        global.cmdhandlers[cmd](message);
+        // message.channel.send(global.res_strings[cmd]);
     }
 
 }

@@ -16,9 +16,9 @@ console.log("index.ts/index.js: Hello, world!");
 global.client = new Discord.Client();
 connect.connectWithResources();
 
-
 global.client.once('ready', () => {
-	console.log('Ready!');
+    console.log('Ready!');
+    global.client.user?.setActivity("!mhelp", {type: "LISTENING"});
 });
 
 global.client.on('message', message => {

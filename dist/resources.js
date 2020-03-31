@@ -5,7 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const global = require("./global");
-function readresources() {
+function readStrings() {
     const dir_path = "resources/strings/";
     const dir = fs.opendirSync(dir_path);
     let dirent;
@@ -14,12 +14,18 @@ function readresources() {
         global.res_strings[dirent.name] = file.toString();
     }
     dir.closeSync();
-    // console.log("Resource Strings:", global.res_strings);
+}
+function readToken() {
     fs.readFile("resources/client_token", (err, data) => {
         if (err)
             throw err;
         global.client_token = data.toString();
     });
+}
+function readresources() {
+    readStrings();
+    readToken();
+    // console.log("Resource Strings:", global.res_strings);
     return 1;
 }
 exports.readresources = readresources;

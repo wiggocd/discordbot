@@ -2,12 +2,10 @@
 *   resources.ts
 */
 
-import Discord = require("discord.js");
 import fs = require("fs");
 import global = require("./global");
 
-export function readresources() {
-
+function readStrings() {
     const dir_path = "resources/strings/";
     const dir = fs.opendirSync(dir_path);
     let dirent: fs.Dirent;
@@ -16,14 +14,18 @@ export function readresources() {
         global.res_strings[dirent.name]=file.toString();
     }
     dir.closeSync();
+}
 
-    // console.log("Resource Strings:", global.res_strings);
-
+function readToken() {
     fs.readFile("resources/client_token", (err, data) => {
         if (err) throw err;
         global.client_token = data.toString();
     });
+}
 
+export function readresources() {
+    readStrings();
+    readToken();
+    // console.log("Resource Strings:", global.res_strings);
     return 1;
-
 }

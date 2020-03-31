@@ -2,8 +2,6 @@
 *   connect.ts
 */
 
-import Discord = require("discord.js");
-import fs = require("fs");
 import global = require("./global");
 import resources = require("./resources");
 
@@ -23,5 +21,5 @@ export function connectWithResources() {
             throw console.log("Failed to load resources.");
         }
     }, 200);
-    
+
 }
