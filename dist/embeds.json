@@ -43,14 +43,42 @@
         "author": {
             "name": "Command List"
         },
-        "description": "A list of commands for the MatrixBot: An in-development Discord bot with text-based games with a matrix theme. :coffee:",
+        "description": "A list of commands for the MatrixBot: An in-development Discord bot with text-based games and a matrix theme. :coffee:",
         "thumbnail": {
             "url": "https://i.imgur.com/DKlwsGD.png"
         },
         "fields": [
             {
-                "name": "General",
-                "value": "`help`"
+                "name": "All",
+                "value": "`help` `shop` "
+            }
+        ],
+        "footer": {
+            "text": "Welcome, to the Real World.\nPrefix for All Commands: `!m`"
+        }
+    },
+    "shop": {
+        "color": "#edcc90",
+        "title": "Item Shop",
+        "author": {
+            "name": "Wake up, Neo."
+        },
+        "description": "Items avaliable to buy, or recieve through boxes - Maxiumum health = 100HP. :beers:",
+        "image": {
+            "url": "https://i.imgur.com/XUsPQhp.png"
+        },
+        "fields": [
+            {
+                "name": "Common",
+                "value": ""
+            },
+            {
+                "name": "Woah",
+                "value": ""
+            },
+            {
+                "name": "Legendary",
+                "value": ""
             }
         ],
         "footer": {

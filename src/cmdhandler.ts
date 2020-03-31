@@ -13,4 +13,10 @@ global.cmdhandlers["help"] = function help(message: Discord.Message) {
     message.channel.send({embed: helpEmbed});
 }
 
+global.cmdhandlers["shop"] = function shop(message: Discord.Message) {
+    // message.channel.send(global.res_strings["help"]);
+    const shopEmbed = embed.createEmbed(embeds.shop);
+    message.channel.send({embed: shopEmbed});
+}
+
 export var cmdhandlers = global.cmdhandlers;

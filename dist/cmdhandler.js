@@ -11,4 +11,9 @@ global.cmdhandlers["help"] = function help(message) {
     const helpEmbed = embed.createEmbed(embeds.help);
     message.channel.send({ embed: helpEmbed });
 };
+global.cmdhandlers["shop"] = function shop(message) {
+    // message.channel.send(global.res_strings["help"]);
+    const shopEmbed = embed.createEmbed(embeds.shop);
+    message.channel.send({ embed: shopEmbed });
+};
 exports.cmdhandlers = global.cmdhandlers;
