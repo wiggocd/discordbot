@@ -29,3 +29,12 @@ function readresources() {
     return 1;
 }
 exports.readresources = readresources;
+function saveStats(jsonPath, arr) {
+    const data = JSON.stringify(arr);
+    fs.writeFile(jsonPath, data, (err) => {
+        if (err)
+            throw err;
+        console.log("Saved to " + jsonPath);
+    });
+}
+exports.saveStats = saveStats;

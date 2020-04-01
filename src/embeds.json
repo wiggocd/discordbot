@@ -91,6 +91,60 @@
 		"footer": {
 			"text": "Welcome, to the Real World.\nPrefix for All Commands: `!m`"
 		}
+	},
+
+
+	"inv_proto": {
+		"color": "#edcc90",
+		"title": "Inventory",
+		"author": {
+			"name": "Wake up, Neo."
+		},
+		"description": "Here's your inventory with the items that you can use. To use an item, send `!muse [ItemID]`",
+		"image": {
+			"url": "https://i.imgur.com/XUsPQhp.png"
+		},
+		"fields": [
+			{
+				"name": "Common",
+				"value": ""
+			},
+			{
+				"name": "Woah",
+				"value": ""
+			},
+			{
+				"name": "Legendary",
+				"value": ""
+			}
+		],
+		"footer": {
+			"text": "Welcome, to the Real World.\nPrefix for All Commands: `!m`"
+		}
+	},
+
+
+
+	"inv": {
+		"color": "#edcc90",
+		"title": "Inventory",
+		"author": {
+			"name": "Wake up, Neo."
+		},
+		"description": "Here's your inventory with the items that you can use. To use an item, send `!muse [ItemID]`",
+		"fields": [
+			{
+				"name": "Stats",
+				"value": ""
+			},
+			{
+				"name": "Items",
+				"value": ""
+			}
+		],
+		"footer": {
+			"text": "Welcome, to the Real World.\nPrefix for All Commands: `!m`"
+		}
 	}
 
 	

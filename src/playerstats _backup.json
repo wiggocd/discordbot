@@ -1,0 +1,12 @@
+[
+    {
+        "usertag": "1234 as number",
+        "inv": [
+            "weapon0",
+            "weapon1"
+        ],
+        "cash": 1000,
+        "xp": 1000,
+        "startdate": "Ddd Mmm DD YYYY"
+    }
+]

@@ -21,6 +21,7 @@ global.client.once('ready', () => {
     console.log('Ready!');
     global.client.user?.setActivity("!mhelp", {type: "LISTENING"});
     items.items_init();
+    global.lastTimeRecieved = new Date;
 });
 
 global.client.on('message', message => {
@@ -28,3 +29,17 @@ global.client.on('message', message => {
     if (!message.content.startsWith(global.prefix)) return;
     msghandler.onmsg(message);
 });
+
+
+function exitHandler() {
+    if (global.playerstats != null) {
+        resources.saveStats("dist/playerstats.json", global.playerstats);
+        resources.saveStats("src/playerstats.json", global.playerstats);
+    }
+}
+
+process.on('exit', exitHandler);
+process.on('SIGINT', exitHandler);
+process.on('SIGUSR1', exitHandler);
+process.on('SIGUSR2', exitHandler);
+process.on('uncaughtException', exitHandler);

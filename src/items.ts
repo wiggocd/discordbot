@@ -2,12 +2,64 @@
 *   items.ts
 */
 
-import item_list = require("./items.json")
-import embeds = require("./embeds.json")
+import Discord = require("discord.js");
+import item_list = require("./items.json");
+import embeds = require("./embeds.json");
+import embed = require("./embed");
+import global = require("./global");
+import playerstats = require("./playerstats.json");
 
 export function items_init() {
     for (let i in item_list.weapons) {
         let weapon = item_list.weapons[i];
         embeds.shop.fields[weapon.category].value += " `"+weapon.name+"` ~ Damage: *"+weapon.damage+"* ~ Cost: **$"+weapon.cost+"**\n";
     }
+}
+
+export function userCheck(usertag: string) {
+    global.playerstats = playerstats as Array<any>;
+    console.log("User in DB: "+global.playerstats.some(item => item.usertag === usertag));
+    if (global.playerstats.some(item => item.usertag === usertag) == true) {
+        return true;
+    } else {
+        console.log("Pushing stats to array...");
+        global.playerstats.push({
+            usertag: usertag,
+            inv: ["fists"],
+            cash: 10,
+            xp: 0,
+            startdate: new Date().toDateString()
+        });
+    }
+}
+
+export function invCheck(usertag: string, item: string) {
+    if (userCheck(usertag) == true) {
+        const inv = global.playerstats.find(item => item.usertag == usertag).inv as Array<string>;
+        if (inv.find(obj => obj == item)) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        invCheck(usertag, item);
+    }
+}
+
+export function invEmbed(user: Discord.User, embed: Discord.MessageEmbed) {
+    var newEmbed = embed;
+    if (userCheck(user.tag) == true) {
+        const userPlayerStats = global.playerstats.find(item => item.usertag == user.tag);
+        const weaponsArr: any[] = userPlayerStats.inv;
+        var weaponsString: string = "";
+
+        newEmbed.fields[0].value = "Cash :moneybag:: `"+userPlayerStats.cash+"`\nXP :coffee:: `"+userPlayerStats.xp+"`\n";
+        weaponsArr.forEach(element => {
+            weaponsString += '`'+element+'`';
+        });
+        newEmbed.fields[1].value = weaponsString;
+    } else {
+        invEmbed(user, embed);
+    }
+    return newEmbed;
 }
