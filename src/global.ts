@@ -20,4 +20,5 @@ export var cmdhandlers = {} as StringIndexedArray;
 export var res_json = {} as StringIndexedArray;
 export let color_tan = "#edcc90";
 export var playerstats: Array<any>;
+export var item_arr: Array<any>;
 export var lastTimeRecieved: Date;

@@ -145,6 +145,44 @@
 		"footer": {
 			"text": "Welcome, to the Real World.\nPrefix for All Commands: `!m`"
 		}
+	},
+
+
+	"syntax_use": {
+		"color": "#edcc90",
+		"title": "Use Item",
+		"author": {
+			"name": "Wake up, Neo."
+		},
+		"description": "To use an item, send `!muse [ItemID] <TargetPlayer>`.",
+		"fields": [
+			{
+				"name": "Notes:",
+				"value": "TargetPlayer is only required if you are attacking a player with a weapon.\nTo view your inventory with avaliable item IDs, use `!minv` or to see avaliable items or weapons, use `!mshop`."
+			}
+		],
+		"footer": {
+			"text": "Welcome, to the Real World.\nPrefix for All Commands: `!m`"
+		}
+	},
+
+
+	"use_attack": {
+		"color": "#edcc90",
+		"title": "Attack!",
+		"author": {
+			"name": "Wake up, Neo."
+		},
+		"description": " ",
+		"fields": [
+			{
+				"name": " ",
+				"value": " "
+			}
+		],
+		"footer": {
+			"text": "Welcome, to the Real World.\nPrefix for All Commands: `!m`"
+		}
 	}
 
 	

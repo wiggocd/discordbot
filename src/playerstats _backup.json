@@ -5,6 +5,7 @@
             "weapon0",
             "weapon1"
         ],
+        "hp": 100,
         "cash": 1000,
         "xp": 1000,
         "startdate": "Ddd Mmm DD YYYY"

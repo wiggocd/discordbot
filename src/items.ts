@@ -10,8 +10,9 @@ import global = require("./global");
 import playerstats = require("./playerstats.json");
 
 export function items_init() {
-    for (let i in item_list.weapons) {
-        let weapon = item_list.weapons[i];
+    global.item_arr = item_list as Array<any>;
+    for (let i in item_list) {
+        let weapon = item_list[i];
         embeds.shop.fields[weapon.category].value += " `"+weapon.name+"` ~ Damage: *"+weapon.damage+"* ~ Cost: **$"+weapon.cost+"**\n";
     }
 }
@@ -26,6 +27,7 @@ export function userCheck(usertag: string) {
         global.playerstats.push({
             usertag: usertag,
             inv: ["fists"],
+            hp: 100,
             cash: 10,
             xp: 0,
             startdate: new Date().toDateString()
@@ -62,4 +64,17 @@ export function invEmbed(user: Discord.User, embed: Discord.MessageEmbed) {
         invEmbed(user, embed);
     }
     return newEmbed;
+}
+
+export function getItem(item: string) {
+    return global.item_arr.find(obj => obj.name == item);
+}
+
+export function damage(usertag: string, value: number) {
+    if (global.playerstats.find(item => item.usertag == usertag).health - value < 1) {
+        global.playerstats.find(item => item.usertag == usertag).health = 100;
+        global.playerstats.find(item => item.usertag == usertag).inv = ["fists"];
+    } else {
+        global.playerstats.find(item => item.usertag == usertag).health -= value;
+    }
 }

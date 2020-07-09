@@ -17,7 +17,7 @@ function onmsg(message) {
         console.log(message.author.username, cmd, args);
         if (global.cmdhandlers[cmd] != undefined && typeof Function) {
             console.log(global.cmdhandlers[cmd]);
-            global.cmdhandlers[cmd](message);
+            global.cmdhandlers[cmd](message, cmd, args);
             // message.channel.send(global.res_strings[cmd]);
         }
     }, 500);

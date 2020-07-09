@@ -1,0 +1,17 @@
+{
+    "common": {
+        "id": 0,
+        "color": "green",
+        "prob": 0.66
+    },
+    "woah": {
+        "id": 1,
+        "color": "blue",
+        "prob": 0.24
+    },
+    "legendary": {
+        "id": 2,
+        "color": "orange",
+        "prob": 0.10
+    }
+}

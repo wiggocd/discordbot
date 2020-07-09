@@ -1,49 +1,34 @@
-{
-    "categories": {
-        "common": {
-            "id": 0,
-            "color": "green",
-            "prob": 0.66
-        },
-        "woah": {
-            "id": 1,
-            "color": "blue",
-            "prob": 0.24
-        },
-        "legendary": {
-            "id": 2,
-            "color": "orange",
-            "prob": 0.10
-        }
+[
+    {
+        "name": "fists",
+        "type": "attack",
+        "category": 0,
+        "cost": 0,
+        "damage": 20,
+        "xp": 50
     },
-    "weapons": [
-        {
-            "name": "fists",
-            "category": 0,
-            "cost": 0,
-            "damage": 20,
-            "xp": 50
-        },
-        {
-            "name": "deagle",
-            "category": 0,
-            "cost": 700,
-            "damage": 32,
-            "xp": 100
-        },
-        {
-            "name": "ak47",
-            "category": 1,
-            "cost": 2700,
-            "damage": 52,
-            "xp": 150
-        },
-        {
-            "name": "nokia",
-            "category": 2,
-            "cost": 10000,
-            "damage": 90,
-            "xp": 2500
-        }
-    ]
-}
+    {
+        "name": "deagle",
+        "type": "attack",
+        "category": 0,
+        "cost": 700,
+        "damage": 32,
+        "xp": 100
+    },
+    {
+        "name": "ak47",
+        "type": "attack",
+        "category": 1,
+        "cost": 2700,
+        "damage": 52,
+        "xp": 150
+    },
+    {
+        "name": "nokia",
+        "type": "attack",
+        "category": 2,
+        "cost": 10000,
+        "damage": 90,
+        "xp": 2500
+    }
+]
